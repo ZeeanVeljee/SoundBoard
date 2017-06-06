@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		593965771EE7191600BF9DCD /* SoundEffectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593965761EE7191600BF9DCD /* SoundEffectsViewController.swift */; };
 		594EB62F1EE70921008F327A /* SoundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594EB62E1EE70921008F327A /* SoundTableViewCell.swift */; };
 		59AA45D31EDC56560077351C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA45D21EDC56560077351C /* AppDelegate.swift */; };
 		59AA45D51EDC56560077351C /* DisplaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA45D41EDC56560077351C /* DisplaySoundsViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		593965761EE7191600BF9DCD /* SoundEffectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundEffectsViewController.swift; sourceTree = "<group>"; };
 		594EB62E1EE70921008F327A /* SoundTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundTableViewCell.swift; sourceTree = "<group>"; };
 		59AA45CF1EDC56560077351C /* Sound Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sound Board.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59AA45D21EDC56560077351C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				59AA45D41EDC56560077351C /* DisplaySoundsViewController.swift */,
 				594EB62E1EE70921008F327A /* SoundTableViewCell.swift */,
 				59AA45D61EDC56560077351C /* Main.storyboard */,
+				593965761EE7191600BF9DCD /* SoundEffectsViewController.swift */,
 				59AA45E71EDC6C180077351C /* SoundViewController.swift */,
 				59AA45DC1EDC56560077351C /* Assets.xcassets */,
 				59AA45DE1EDC56560077351C /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 				59AA45E81EDC6C180077351C /* SoundViewController.swift in Sources */,
 				59AA45DB1EDC56560077351C /* Sound_Board.xcdatamodeld in Sources */,
 				59AA45D51EDC56560077351C /* DisplaySoundsViewController.swift in Sources */,
+				593965771EE7191600BF9DCD /* SoundEffectsViewController.swift in Sources */,
 				59AA45D31EDC56560077351C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,10 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Display Sounds View Controller-->
+        <!--Sounds-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="DisplaySoundsViewController" customModule="Sound_Board" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,7 +85,7 @@
                             <constraint firstItem="bxe-y0-1VZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xE9-fM-X2e"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hwp-DE-fuF">
+                    <navigationItem key="navigationItem" title="Sounds" id="hwp-DE-fuF">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gWa-SV-3Nx">
                             <connections>
                                 <segue destination="zw0-9a-q6H" kind="show" id="uMD-Bz-z7K"/>
@@ -93,16 +94,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="bxe-y0-1VZ" id="1i2-bv-zVJ"/>
+                        <segue destination="xqx-wq-76Q" kind="show" identifier="editSoundSegue" id="kEy-7f-nfP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="872.79999999999995" y="-546.47676161919048"/>
         </scene>
-        <!--Sound View Controller-->
+        <!--New Sound-->
         <scene sceneID="lAW-SX-CsJ">
             <objects>
-                <viewController id="zw0-9a-q6H" customClass="SoundViewController" customModule="Sound_Board" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New Sound" id="zw0-9a-q6H" customClass="SoundViewController" customModule="Sound_Board" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YkJ-wt-iU6"/>
                         <viewControllerLayoutGuide type="bottom" id="mdE-CU-hrs"/>
@@ -163,7 +165,108 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eH0-Fk-Ecl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1712.8" y="-546.47676161919048"/>
+            <point key="canvasLocation" x="1860" y="-947"/>
+        </scene>
+        <!--Sound Overlays-->
+        <scene sceneID="c58-Mt-EwK">
+            <objects>
+                <viewController title="Sound Overlays" id="xqx-wq-76Q" customClass="SoundEffectsViewController" customModule="Sound_Board" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JAL-cf-gE9"/>
+                        <viewControllerLayoutGuide type="bottom" id="URc-bA-YX1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9x1-4N-R7g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sound Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rZG-wm-yaY">
+                                <rect key="frame" x="40" y="94" width="295" height="19"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOa-Ev-Snw">
+                                <rect key="frame" x="167" y="133" width="41" height="30"/>
+                                <state key="normal" title="FInish"/>
+                                <connections>
+                                    <action selector="finishTapped:" destination="xqx-wq-76Q" eventType="touchUpInside" id="rIu-kn-JF9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6u-R0-d7y">
+                                <rect key="frame" x="100" y="183" width="174" height="30"/>
+                                <state key="normal" title="Finish and Create as New"/>
+                                <connections>
+                                    <action selector="finishAndCreateNewTapped:" destination="xqx-wq-76Q" eventType="touchUpInside" id="9nQ-IO-FBi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qat-Vy-qWE">
+                                <rect key="frame" x="50" y="290" width="75" height="75"/>
+                                <state key="normal" image="SlowSnail"/>
+                                <connections>
+                                    <action selector="slowSnailEffect:" destination="xqx-wq-76Q" eventType="touchUpInside" id="LS5-nz-ZkH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJV-4a-Xn8">
+                                <rect key="frame" x="272" y="290" width="75" height="75"/>
+                                <state key="normal" image="Chipmunk"/>
+                                <connections>
+                                    <action selector="chipmunkEffect:" destination="xqx-wq-76Q" eventType="touchUpInside" id="u2J-Xf-9qe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEM-bw-YSj">
+                                <rect key="frame" x="161" y="290" width="75" height="75"/>
+                                <state key="normal" image="FastRabbit"/>
+                                <connections>
+                                    <action selector="fastRabbitEffect:" destination="xqx-wq-76Q" eventType="touchUpInside" id="fc6-B0-jDt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7T-ZP-cdz">
+                                <rect key="frame" x="50" y="400" width="75" height="75"/>
+                                <state key="normal" image="DarthVader"/>
+                                <connections>
+                                    <action selector="darthVaderEffect:" destination="xqx-wq-76Q" eventType="touchUpInside" id="JLc-6g-2lp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rZG-wm-yaY" firstAttribute="leading" secondItem="9x1-4N-R7g" secondAttribute="leading" constant="40" id="0Ez-IY-H5U"/>
+                            <constraint firstItem="URc-bA-YX1" firstAttribute="top" secondItem="mEM-bw-YSj" secondAttribute="bottom" constant="302" id="3eY-Wm-1h6"/>
+                            <constraint firstItem="QJV-4a-Xn8" firstAttribute="width" secondItem="Qat-Vy-qWE" secondAttribute="width" id="73k-Vh-432"/>
+                            <constraint firstItem="YOa-Ev-Snw" firstAttribute="top" secondItem="rZG-wm-yaY" secondAttribute="bottom" constant="20" id="8tE-r7-nei"/>
+                            <constraint firstItem="rZG-wm-yaY" firstAttribute="centerX" secondItem="9x1-4N-R7g" secondAttribute="centerX" id="AEC-LM-UbG"/>
+                            <constraint firstItem="g7T-ZP-cdz" firstAttribute="width" secondItem="Qat-Vy-qWE" secondAttribute="width" id="Cav-iK-ad0"/>
+                            <constraint firstItem="G6u-R0-d7y" firstAttribute="centerX" secondItem="9x1-4N-R7g" secondAttribute="centerX" id="GAu-tS-AMO"/>
+                            <constraint firstItem="rZG-wm-yaY" firstAttribute="top" secondItem="JAL-cf-gE9" secondAttribute="bottom" constant="30" id="HI6-rF-gL8"/>
+                            <constraint firstItem="g7T-ZP-cdz" firstAttribute="top" secondItem="Qat-Vy-qWE" secondAttribute="bottom" constant="35" id="Jry-zN-4dk"/>
+                            <constraint firstItem="Qat-Vy-qWE" firstAttribute="leading" secondItem="9x1-4N-R7g" secondAttribute="leadingMargin" constant="34" id="LI0-vP-shU"/>
+                            <constraint firstItem="mEM-bw-YSj" firstAttribute="height" secondItem="Qat-Vy-qWE" secondAttribute="height" id="N8X-Uv-xCm"/>
+                            <constraint firstItem="g7T-ZP-cdz" firstAttribute="height" secondItem="Qat-Vy-qWE" secondAttribute="height" id="NTd-gm-72A"/>
+                            <constraint firstItem="QJV-4a-Xn8" firstAttribute="height" secondItem="Qat-Vy-qWE" secondAttribute="height" id="Nem-oO-JP1"/>
+                            <constraint firstItem="mEM-bw-YSj" firstAttribute="leading" secondItem="Qat-Vy-qWE" secondAttribute="trailing" constant="36" id="NqV-dF-OIU"/>
+                            <constraint firstItem="mEM-bw-YSj" firstAttribute="width" secondItem="Qat-Vy-qWE" secondAttribute="width" id="Quf-O2-4Uv"/>
+                            <constraint firstItem="G6u-R0-d7y" firstAttribute="top" secondItem="YOa-Ev-Snw" secondAttribute="bottom" constant="20" id="WHN-tm-PuI"/>
+                            <constraint firstAttribute="trailing" secondItem="rZG-wm-yaY" secondAttribute="trailing" constant="40" id="epO-Mt-2q7"/>
+                            <constraint firstItem="URc-bA-YX1" firstAttribute="top" secondItem="g7T-ZP-cdz" secondAttribute="bottom" constant="192" id="ngO-Ue-idn"/>
+                            <constraint firstItem="Qat-Vy-qWE" firstAttribute="top" secondItem="mEM-bw-YSj" secondAttribute="top" id="nlK-nt-aR0"/>
+                            <constraint firstItem="QJV-4a-Xn8" firstAttribute="leading" secondItem="mEM-bw-YSj" secondAttribute="trailing" constant="36" id="nzr-Lj-Lly"/>
+                            <constraint firstItem="mEM-bw-YSj" firstAttribute="top" secondItem="QJV-4a-Xn8" secondAttribute="top" id="soF-xd-bLZ"/>
+                            <constraint firstItem="YOa-Ev-Snw" firstAttribute="centerX" secondItem="9x1-4N-R7g" secondAttribute="centerX" id="wdb-EJ-pC5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QJV-4a-Xn8" secondAttribute="trailing" constant="12" id="zCP-6D-Npa"/>
+                            <constraint firstItem="Qat-Vy-qWE" firstAttribute="leading" secondItem="g7T-ZP-cdz" secondAttribute="leading" id="zYu-0h-vIl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chipmunkButton" destination="QJV-4a-Xn8" id="lBE-QN-tg7"/>
+                        <outlet property="darthVaderButton" destination="g7T-ZP-cdz" id="fJ7-Pg-T4f"/>
+                        <outlet property="fastRabbitButton" destination="mEM-bw-YSj" id="QEN-TO-Q35"/>
+                        <outlet property="slowSnailButton" destination="Qat-Vy-qWE" id="ZgN-KM-ycB"/>
+                        <outlet property="soundNameLabel" destination="rZG-wm-yaY" id="cyE-pG-m3U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nUC-u1-gr2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1860" y="-224.4377811094453"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Csm-Py-XHy">
@@ -184,4 +287,10 @@
             <point key="canvasLocation" x="-79.200000000000003" y="-545.57721139430294"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Chipmunk" width="100" height="100"/>
+        <image name="DarthVader" width="100" height="100"/>
+        <image name="FastRabbit" width="100" height="100"/>
+        <image name="SlowSnail" width="100" height="100"/>
+    </resources>
 </document>

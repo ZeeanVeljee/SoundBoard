@@ -57,14 +57,21 @@ class DisplaySoundsViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sound = sounds[indexPath.row]
-        
-        do {
+        performSegue(withIdentifier: "editSoundSegue", sender: sound)
+        /*do {
             audioPlayer = try AVAudioPlayer(data: sound.audio! as Data)
             audioPlayer?.play()
         } catch {
             
-        }
+        }*/
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editSoundSegue" {
+            let nextVC = segue.destination as! SoundEffectsViewController
+            nextVC.sound = sender as? Sound
+        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
